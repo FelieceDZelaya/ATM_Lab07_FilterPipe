@@ -1,0 +1,22 @@
+<div *ngIf="showPanel()">
+ 
+<h3>{{ currentOperation }}</h3>
+      
+<form [formGroup]="transactionAmountForm" (ngSubmit)="performOperation()">
+
+    <div class="form-group">
+
+        <label class="center-block">Transaction Amount
+          <input class="form-control" formControlName="transactionAmount">
+        </label> 
+         <!-- <div class="alert alert-warning" *ngIf="!transactionAmount">Please provide an amount</div> -->
+         
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!transactionAmountForm.valid">Continue</button> 
+    </div>
+
+  </form>
+
+
+</div>
